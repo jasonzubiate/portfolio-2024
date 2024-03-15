@@ -11,7 +11,7 @@ const config: Config = {
       colors: {
         "demo-smoke": "#EFEFEF",
         "cod-gray": "#131313",
-        "clay-grey": "#626262",
+        "clay-toff": "#626262",
         "lime-green": "#D0F38A",
         "pool-sun": "#288BFF",
       },

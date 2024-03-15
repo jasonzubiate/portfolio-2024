@@ -7,3 +7,28 @@
 *::after {
   @apply p-0 m-0 box-border;
 }
+
+.slider-container {
+  @apply absolute bg-lime-green py-6 md:py-8;
+}
+
+.slider {
+  @apply relative whitespace-nowrap flex;
+}
+
+.slider p {
+  @apply m-0 text-cod-gray text-xl md:text-3xl flex gap-6 items-center;
+}
+
+.slider p:nth-of-type(2) {
+  @apply absolute left-full;
+}
+
+/* WEBKIT */
+::-webkit-scrollbar {
+  @apply w-[6px] bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-demo-smoke rounded-md mx-2;
+}
