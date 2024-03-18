@@ -35,6 +35,22 @@
   @apply text-cod-gray text-3xl hover:text-clay-toff transition-colors duration-300;
 }
 
+#about-name {
+  font-size: clamp(20px, 5.5vw, 500px);
+}
+.about-text {
+  font-size: clamp(12px, 0.8vw, 16px);
+}
+
+@media screen and (max-width: 1024px) {
+  #about-name {
+    font-size: clamp(20px, 9.2vw, 500px);
+  }
+  .about-text {
+    font-size: clamp(12px, 2.8vw, 14px);
+  }
+}
+
 /* WEBKIT */
 ::-webkit-scrollbar {
   @apply w-[6px] bg-transparent;
