@@ -1,5 +1,9 @@
-import Image from "next/image";
+import { Hero, Work } from "@/components/page";
 
 export default function Home() {
-  return <main id="home">Home</main>;
+  return (
+    <main id="home">
+      <Hero />
+    </main>
+  );
 }

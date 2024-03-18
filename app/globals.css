@@ -9,7 +9,7 @@
 }
 
 .slider-container {
-  @apply absolute bg-lime-green py-6 md:py-8;
+  @apply absolute bottom-0 bg-lime-green py-6 md:py-8;
 }
 
 .slider {
@@ -22,6 +22,17 @@
 
 .slider p:nth-of-type(2) {
   @apply absolute left-full;
+}
+
+#menu-button:hover .menu-bar-top {
+  @apply translate-y-[320%];
+}
+#menu-button:hover .menu-bar-bottom {
+  @apply -translate-y-[320%];
+}
+
+.menu-link {
+  @apply text-cod-gray text-3xl hover:text-clay-toff transition-colors duration-300;
 }
 
 /* WEBKIT */
