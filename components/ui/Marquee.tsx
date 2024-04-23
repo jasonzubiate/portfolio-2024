@@ -59,7 +59,7 @@ export default function Marquee() {
     });
 
     tl.to(marqueeRef.current, {
-      yPercent: 100, // Adjust this value based on the height of your marquee
+      yPercent: 100,
       ease: "none",
     });
   }, []);
@@ -118,26 +118,4 @@ export default function Marquee() {
       </div>
     </div>
   );
-}
-
-{
-  /* <p>•</p>
-<p>Next.js</p>
-<p>•</p>
-<p>TypeScript</p>
-<p>•</p>
-<p>Full-Stack</p>
-<p>•</p>
-<p>Prisma</p>
-<p>•</p>
-<p>PostgrSQL</p>
-<p>•</p>
-<p>GSAP</p>
-<p>•</p>
-<p>Python</p>
-<p>•</p>
-<p>Web Design</p>
-<p>•</p>
-<p>Front-End</p>
-<p>•</p> */
 }

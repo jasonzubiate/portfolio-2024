@@ -13,11 +13,28 @@
   src: url("/fonts.TIEMPOSHEADLINE-REGULARITALIC_0.OTF");
 }
 
+@font-face {
+  font-family: "Respira";
+  src: url("/fonts.Respira-Black.otf");
+}
+
 .tiempos {
   font-family: "Tiempos Headline", serif;
 }
 
+.respira {
+  font-family: "Respira", "tiempos", serif;
+}
+
+.header__info {
+  font-size: clamp(12px, 0.8vw, 20px);
+}
+
 #hero__h1 {
+  font-size: clamp(20px, 5vw, 500px);
+}
+
+#about__h1 {
   font-size: clamp(20px, 5vw, 500px);
 }
 
@@ -42,9 +59,17 @@
   font-size: clamp(20px, 5.5vw, 500px);
 }
 
+.custom__text__xl {
+  font-size: clamp(16px, 1.3vw, 96px);
+}
+
 #skills__p {
   font-size: clamp(20px, 2vw, 96px);
   line-height: 1.2;
+}
+
+#footer__h2 {
+  font-size: clamp(64px, 6vw, 500px);
 }
 
 .slider-container {
@@ -71,10 +96,6 @@
   @apply -translate-y-[320%];
 }
 
-.menu-link {
-  @apply text-cod-gray text-3xl hover:text-clay-toff transition-colors duration-300;
-}
-
 #about-name {
   font-size: clamp(20px, 5.5vw, 500px);
 }
@@ -91,11 +112,21 @@
   }
 }
 
-/* WEBKIT */
+/* WEBKIT
 ::-webkit-scrollbar {
   @apply hidden;
 }
 
 ::-webkit-scrollbar-thumb {
   @apply bg-demo-smoke rounded-md mx-2;
+} */
+
+.gallery-column:nth-of-type(1) {
+  top: -45%;
+}
+.gallery-column:nth-of-type(2) {
+  top: -95%;
+}
+.gallery-column:nth-of-type(3) {
+  top: -40%;
 }

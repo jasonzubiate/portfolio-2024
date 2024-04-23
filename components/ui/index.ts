@@ -1,4 +1,5 @@
 import Marquee from "./Marquee";
-import SkillCard from "./SkillCard";
+import Menu from "./Menu";
+import Samples from "./Samples";
 
-export { Marquee, SkillCard };
+export { Marquee, Samples };

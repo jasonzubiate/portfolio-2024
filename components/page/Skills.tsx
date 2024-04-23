@@ -12,39 +12,39 @@ export default function Skills() {
   const pLine3Ref = useRef(null);
   const pLine4Ref = useRef(null);
 
-  useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.from(h2Ref.current, {
-      scrollTrigger: {
-        trigger: h2Ref.current,
-        start: "top 80%",
-        end: "bottom 60%",
-      },
-      yPercent: 100,
-      duration: 1,
-    });
+  // useGSAP(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
+  //   gsap.from(h2Ref.current, {
+  //     scrollTrigger: {
+  //       trigger: h2Ref.current,
+  //       start: "top 80%",
+  //       end: "bottom 60%",
+  //     },
+  //     yPercent: 100,
+  //     duration: 1,
+  //   });
 
-    const lines = [
-      pLine1Ref.current,
-      pLine2Ref.current,
-      pLine3Ref.current,
-      pLine4Ref.current,
-    ];
-    lines.forEach((line) => {
-      gsap.from(line, {
-        scrollTrigger: {
-          trigger: line,
-          start: "top 90%", // starts a bit before the line enters the view
-        },
-        yPercent: 100,
-        duration: 0.75,
-        delay: 0.1,
-      });
-    });
-  }, []);
+  //   const lines = [
+  //     pLine1Ref.current,
+  //     pLine2Ref.current,
+  //     pLine3Ref.current,
+  //     pLine4Ref.current,
+  //   ];
+  //   lines.forEach((line) => {
+  //     gsap.from(line, {
+  //       scrollTrigger: {
+  //         trigger: line,
+  //         start: "top 90%", // starts a bit before the line enters the view
+  //       },
+  //       yPercent: 100,
+  //       duration: 0.75,
+  //       delay: 0.1,
+  //     });
+  //   });
+  // }, []);
 
   return (
-    <section id="skills" className="flex flex-col px-8 py-24 gap-32">
+    <section id="skills" className="flex flex-col py-24 gap-24">
       <div className="flex justify-between w-full">
         <div className="overflow-hidden">
           <h2 ref={h2Ref} id="skills__h2">
@@ -59,15 +59,10 @@ export default function Skills() {
             </span>
           </span>
           <span className="overflow-hidden">
-            <span ref={pLine2Ref}>
-              strives to keep up to date with the latest
-            </span>
+            <span ref={pLine2Ref}>thrives in challenging environments. </span>
           </span>
           <span className="overflow-hidden">
-            <span ref={pLine3Ref}>
-              tech stacks. I thrive when working in challenging environments and
-              enjoy
-            </span>
+            <span ref={pLine3Ref}>I enjoy expanding my tech stack and</span>
           </span>
           <span className="overflow-hidden">
             <span ref={pLine4Ref}> working on meaningful projects.</span>

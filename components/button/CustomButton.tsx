@@ -1,5 +1,4 @@
 import { CustomButtonProps } from "@/types";
-import { LuArrowUpRight } from "react-icons/lu";
 
 export default function CustomButton({
   title,
@@ -34,7 +33,6 @@ export default function CustomButton({
       target="_blank"
     >
       {title}
-      {icon && <LuArrowUpRight size={20} color={textColor} />}
     </a>
   );
 }

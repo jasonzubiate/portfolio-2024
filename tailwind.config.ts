@@ -10,14 +10,14 @@ const config: Config = {
     extend: {
       colors: {
         "demo-smoke": "#EFEFEF",
-        "demo-hover": "#DFDFDF",
+        "demo-hover": "#D3D3D3",
         "cod-gray": "#131313",
-        "clay-toff": "#626262",
+        "blush-gray": "#D8D8D8",
+        "clay-toff": "#757575",
         "lime-green": "#D0F38A",
         "pool-sun": "#288BFF",
       },
     },
   },
-  plugins: [],
 };
 export default config;

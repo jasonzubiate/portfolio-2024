@@ -37,3 +37,14 @@ export async function renderWeatherIcon() {
       return "☀️"; // Default to sunny if weather type is unknown
   }
 }
+
+export function emailRedirect(): void {
+  const emailAddress = "hey.spinnin@gmail.com";
+  const subject = "🤙 I am looking for an agency. Let's talk!";
+
+  const mailtoUrl = `mailto:${emailAddress}?subject=${encodeURIComponent(
+    subject
+  )}`;
+
+  window.location.href = mailtoUrl;
+}

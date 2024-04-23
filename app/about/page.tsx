@@ -1,88 +1,109 @@
-import Image from "next/image";
 import Link from "next/link";
-import img from "@/public/img/jason.jpg";
+import img from "@/public/img/hollywood.jpg";
+import Image from "next/image";
+import {
+  frontEndSkills,
+  backEndSkills,
+  databaseSkills,
+  concepts,
+} from "@/data";
 
 export default function About() {
   return (
-    <section
-      id="about"
-      className="relative flex flex-col lg:flex-row lg:h-[100dvh]"
+    <div
+      id="about__page"
+      className="flex flex-col gap-32 px-4 lg:px-8 lg:pb-16"
     >
-      <div className="relative w-full h-[50vh] lg:h-auto px-4 lg:w-5/12">
-        <Image
-          src={img}
-          alt="Jason Zubiate"
-          fill
-          quality={100}
-          className="object-cover object-center"
-        />
-      </div>
-      <div className="lg:w-7/12 flex flex-col mt-[15%] gap-12 lg:gap-16 px-4 lg:px-8">
-        <div className="flex flex-col gap-3 lg:gap-0 lg:flex-row w-full lg:justify-between">
-          <h4 className="about-text uppercase text-clay-toff">[About]</h4>
-          <div className="flex flex-col gap-8 w-full lg:w-2/3">
-            <p className="about-text uppercase">
-              I&apos;m Jason, a creative developer living in LA. While I have
-              experience in building full-stack applications, my expertise lies
-              in front-end development and crafting engaging experiences with my
-              design and functionality. Modern design is my bread and butter,
-              with a heavy focus in the music and entertainment world.
-            </p>
-            <p className="about-text uppercase">
-              I launched my career in 2022 as a front-end develop at a college
-              startup Nutripair, where I honed my skills in React and Next.js. I
-              have since been a part of amazing experiences such as contributing
-              to a machine learning model that assists with cough diarization
-              for ObvioHealth and Hyfe AI.
-            </p>
-            <p className="about-text uppercase">
-              Today I bring a high level of discipline to my role as a
-              full-stack engineer and have some fun producing some house tunes.
-            </p>
-          </div>
-        </div>
-        <div className="flex flex-col gap-3 lg:gap-0 lg:flex-row w-full lg:justify-between">
-          <h4 className="about-text uppercase text-clay-toff">[Contact]</h4>
-          <div className="flex w-full lg:w-2/3 gap-12 flex-wrap lg:flex-nowrap mb-32 md:mb-48 lg:mb-0">
-            <a
-              href="https://www.instagram.com/jason.zubiate"
-              target="_blank"
-              className="about-text uppercase hover:underline"
-            >
-              Instagram
-            </a>
-            <a
-              href="https://www.linkedin.com/in/jasonzubiate/"
-              target="_blank"
-              className="about-text uppercase hover:underline"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://wwww.github.com/jason.zubiate"
-              target="_blank"
-              className="about-text uppercase hover:underline"
-            >
-              Github
-            </a>
-            <Link
-              href="/resume"
-              className="about-text uppercase hover:underline"
-            >
-              Resume
-            </Link>
-            <button className="about-text uppercase hover:underline">
-              Email
-            </button>
-          </div>
-        </div>
-        <h1
-          id="about-name"
-          className="absolute bottom-0 uppercase tracking-tight"
-        >
-          Jason Zubiate 2024
+      <div className="flex flex-col pt-44 gap-16">
+        <h1 id="about__h1" className="leading-[100%]">
+          A creative developer born and raised in sunny{" "}
+          <span className="tiempos italic">California</span>.
         </h1>
+        <div className="flex justify-between">
+          <div className="flex flex-col gap-4 w-2/5">
+            <p className="custom__text__xl">
+              Modern design is my <span className="tiempos italic">bread</span>{" "}
+              and <span className="tiempos italic">butter</span>. When creating,
+              I&apos;m either playing Larry June or Tame Impala.
+            </p>
+            <p className="custom__text__xl">
+              I launched my career as a front-end developer in 2022, working
+              with a college startup where I honed my skills in{" "}
+              <span className="tiempos italic">React</span> and{" "}
+              <span className="tiempos italic">Next.js</span>.
+            </p>
+            <p className="custom__text__xl">
+              Currently, I am developing an innovative social tool for music
+              artists at Trackstack, running my own{" "}
+              <span className="tiempos italic">creative studio</span>, and
+              producing house music on Ableton.
+            </p>
+          </div>
+          <div className="w-5/12 relative rounded-md lg:rounded-lg overflow-hidden">
+            <Image
+              src={img}
+              alt="Los Angeles"
+              fill
+              objectFit="cover"
+              objectPosition="center"
+            />
+          </div>
+        </div>
       </div>
-    </section>
+      <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-4">
+          <h4 className="uppercase">Frontend</h4>
+          <div className="flex flex-wrap gap-4">
+            {frontEndSkills.map((skill, index) => (
+              <p
+                key={index}
+                className="flex px-4 py-2 rounded-md border border-demo-smoke custom__text__xl"
+              >
+                {skill}
+              </p>
+            ))}
+          </div>
+        </div>
+        <div className="flex flex-col gap-4">
+          <h4 className="uppercase">Backend</h4>
+          <div className="flex gap-4">
+            {backEndSkills.map((skill, index) => (
+              <p
+                key={index}
+                className="flex px-4 py-2 rounded-md border border-demo-smoke custom__text__xl"
+              >
+                {skill}
+              </p>
+            ))}
+          </div>
+        </div>
+        <div className="flex flex-col gap-4">
+          <h4 className="uppercase">Database</h4>
+          <div className="flex gap-4">
+            {databaseSkills.map((skill, index) => (
+              <p
+                key={index}
+                className="flex px-4 py-2 rounded-md border border-demo-smoke custom__text__xl"
+              >
+                {skill}
+              </p>
+            ))}
+          </div>
+        </div>
+        <div className="flex flex-col gap-4">
+          <h4 className="uppercase">Concepts</h4>
+          <div className="flex gap-4">
+            {concepts.map((skill, index) => (
+              <p
+                key={index}
+                className="flex px-4 py-2 rounded-md border border-demo-smoke custom__text__xl"
+              >
+                {skill}
+              </p>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

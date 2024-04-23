@@ -3,11 +3,15 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { GeistMono } from "geist/font/mono";
-import img from "@/public/img/memoji.png";
+import memoji from "@/public/img/memoji.png";
+import memoji2 from "@/public/img/memoji-1.png";
 import { getLocalTime, renderWeatherIcon } from "@/utils";
-import CustomButton from "../button/CustomButton";
 import { MenuButton } from "../button";
-import { motion } from "framer-motion";
+
+import ContactModal from "../feature/ContactModal";
+import { LuArrowUpRight } from "react-icons/lu";
+import { usePathname } from "next/navigation";
+import Menu from "./Menu";
 
 const variants = {
   open: {
@@ -22,8 +26,10 @@ const variants = {
 
 export default function Header() {
   const [time, setTime] = useState("");
-  const [modal, setModal] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const [isMenuActive, setIsMenuActive] = useState(false);
+  const pathname = usePathname();
+  let currentIcon = memoji;
 
   useEffect(() => {
     function updateLocalTime() {
@@ -37,66 +43,65 @@ export default function Header() {
     };
   }, []);
 
-  function renderIcon() {
-    const hour = new Date().getHours();
-    const icon = null;
-    if (hour >= 22 || hour < 5) {
-      return <span className="text-sm">🌙</span>;
+  const bgColor = () => {
+    if (pathname === "/work") {
+      currentIcon = memoji2;
+      return "light";
     } else {
-      return <span className="text-sm">{renderWeatherIcon()}</span>;
+      currentIcon = memoji;
+      return "dark";
     }
-  }
+  };
+
+  const currentBgColor = bgColor();
 
   return (
     <header className="fixed z-50 flex justify-between items-center w-full p-8">
+      <ContactModal visible={isModalVisible} toggleModal={setIsModalVisible} />
+
       <Link href={"/"}>
-        <Image src={img} alt="Jason Zubiate" height={54} width={54} />
+        <Image src={currentIcon} alt="Jason Zubiate" height={54} width={54} />
       </Link>
-      <div className="flex items-center gap-20">
+      <div className="flex items-center gap-16">
         <div className="flex gap-16">
-          <div className="flex gap-3 items-center">
+          <div className="flex gap-2 items-center">
             <div className="w-1 h-1 bg-lime-green rounded-full animate-ping"></div>
             <p
-              className={`${GeistMono.className} hero__status uppercase font-light`}
+              className={`${
+                GeistMono.className
+              } header__info uppercase font-light ${
+                currentBgColor === "dark" ? "text-demo-smoke" : "text-cod-gray"
+              }`}
             >
               Open for full-time positions
             </p>
           </div>
           <div className="flex gap-2 items-center">
-            {/* {renderIcon()} */}
-            <p className={`${GeistMono.className} hero__status uppercase`}>
-             🌤️ LA {time}
+            <p
+              className={`${
+                GeistMono.className
+              } header__info uppercase font-light ${
+                currentBgColor === "dark" ? "text-demo-smoke" : "text-cod-gray"
+              }`}
+            >
+              🌤️ LA {time}
             </p>
           </div>
         </div>
         <div className="flex gap-4">
-          <CustomButton
-            title="Contact"
-            color="white"
-            onClick={() => setModal(true)}
-            icon
-          />
+          <button
+            onClick={() => setIsModalVisible(true)}
+            className={`flex gap-1 items-center py-2 px-4 uppercase rounded-md lg:rounded-lg text-sm transition-colors duration-200 ${
+              currentBgColor === "light"
+                ? "text-demo-smoke bg-cod-gray"
+                : "text-cod-gray bg-demo-smoke hover:bg-demo-hover"
+            }`}
+          >
+            Contact
+            <LuArrowUpRight size={18} className="text-trace-ash" />
+          </button>
           <div className="relative">
-            <motion.div
-              className="h-[400px] w-[300px] bg-demo-smoke rounded-xl"
-              variants={variants}
-              animate={isMenuActive ? "open" : "closed"}
-              initial="closed"
-            >
-              {/* <p>Menu</p>
-              <Link rel="stylesheet" href="/about" className="menu-link">
-                About
-              </Link>
-              <Link rel="stylesheet" href="/music" className="menu-link">
-                Tunes
-              </Link>
-              <Link rel="stylesheet" href="/contact" className="menu-link">
-                Contact
-              </Link>
-              <Link rel="stylesheet" href="/resume" className="menu-link">
-                Resume
-              </Link> */}
-            </motion.div>
+            {/* <Menu isMenuActive={isMenuActive} /> */}
             <MenuButton setIsMenuActive={setIsMenuActive} />
           </div>
         </div>

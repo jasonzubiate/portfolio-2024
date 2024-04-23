@@ -5,7 +5,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div
       id={project.name}
-      className="flex p-4 flex-col justify-between h-[600px] rounded-2xl bg-clay-toff"
+      className="flex p-4 flex-col justify-between h-[600px] rounded-md lg:rounded-lg bg-clay-toff"
     >
       <p className="text-xl uppercase">{project.name}</p>
       <div className="w-full flex justify-end gap-4 font-medium">

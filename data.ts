@@ -21,6 +21,43 @@ export const projects: Project[] = [
   },
 ];
 
+export const frontEndSkills = [
+  "React",
+  "Next.js",
+  "HTML",
+  "CSS",
+  "TypeScript",
+  "JavaScript",
+  "Tailwind",
+  "SASS",
+  "Recoil",
+  "Framer Motion",
+  "GSAP",
+  "Payload CMS",
+];
+
+export const backEndSkills = ["Python", "Node.js", "Express"];
+
+export const databaseSkills = [
+  "Prisma",
+  "Supabase",
+  "MongoDB",
+  "PostgreSQL",
+  "Vercel",
+  "AWS",
+  "RESTful API",
+];
+
+export const concepts = [
+  "Agile",
+  "Web Design",
+  "SEO",
+  "UX Design",
+  "Creativity",
+  "Prototyping",
+  "Design Systems",
+];
+
 export const skills: Skill[] = [
   {
     name: "Design",
