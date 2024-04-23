@@ -8,8 +8,47 @@
   @apply p-0 m-0 box-border;
 }
 
+@font-face {
+  font-family: "Tiempos Headline";
+  src: url("/fonts.TIEMPOSHEADLINE-REGULARITALIC_0.OTF");
+}
+
+.tiempos {
+  font-family: "Tiempos Headline", serif;
+}
+
+#hero__h1 {
+  font-size: clamp(20px, 5vw, 500px);
+}
+
+#hero__bio {
+  font-size: clamp(12px, 1.2vw, 24px);
+  line-height: 1.5;
+}
+
+.hero__status {
+  font-size: clamp(12px, 1vw, 20px);
+}
+
+.hero__p {
+  font-size: clamp(12px, 1.2vw, 32px);
+}
+
+.hero__button {
+  font-size: clamp(12px, 1.2vw, 20px);
+}
+
+#skills__h2 {
+  font-size: clamp(20px, 5.5vw, 500px);
+}
+
+#skills__p {
+  font-size: clamp(20px, 2vw, 96px);
+  line-height: 1.2;
+}
+
 .slider-container {
-  @apply absolute bottom-0 bg-lime-green py-6 md:py-8;
+  @apply fixed bottom-0 bg-lime-green py-4 md:py-6;
 }
 
 .slider {
@@ -17,7 +56,8 @@
 }
 
 .slider p {
-  @apply m-0 text-cod-gray text-xl md:text-3xl flex gap-6 items-center;
+  @apply m-0 text-cod-gray flex gap-6 items-center;
+  font-size: clamp(14px, 1.6vw, 32px);
 }
 
 .slider p:nth-of-type(2) {
@@ -53,7 +93,7 @@
 
 /* WEBKIT */
 ::-webkit-scrollbar {
-  @apply w-[6px] bg-transparent;
+  @apply hidden;
 }
 
 ::-webkit-scrollbar-thumb {

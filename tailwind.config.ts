@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         "demo-smoke": "#EFEFEF",
+        "demo-hover": "#DFDFDF",
         "cod-gray": "#131313",
         "clay-toff": "#626262",
         "lime-green": "#D0F38A",

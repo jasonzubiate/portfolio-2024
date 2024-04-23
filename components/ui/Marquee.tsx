@@ -1,3 +1,5 @@
+// Marquee.tsx
+
 "use client";
 import { useRef } from "react";
 import gsap from "gsap";
@@ -7,6 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default function Marquee() {
   gsap.registerPlugin(useGSAP);
 
+  const marqueeRef = useRef(null);
   const firstText = useRef(null);
   const secondText = useRef(null);
   const slider = useRef(null);
@@ -43,13 +46,28 @@ export default function Marquee() {
     requestAnimationFrame(animation);
   };
 
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#hero",
+        start: "top top",
+        end: "bottom 90%",
+        scrub: true,
+      },
+    });
+
+    tl.to(marqueeRef.current, {
+      yPercent: 100, // Adjust this value based on the height of your marquee
+      ease: "none",
+    });
+  }, []);
+
   return (
-    <div className="slider-container">
-      <div className="slider">
+    <div ref={marqueeRef} className="slider-container">
+      <div ref={slider} className="slider">
         <p ref={firstText}>
-          <span>React</span>
-          <span>•</span>
-          <span>Next.js</span>
           <span>•</span>
           <span>TypeScript</span>
           <span>•</span>
@@ -59,19 +77,21 @@ export default function Marquee() {
           <span>•</span>
           <span>PostgrSQL</span>
           <span>•</span>
+          <span>React</span>
+          <span>•</span>
+          <span>Next.js</span>
+          <span>•</span>
           <span>GSAP</span>
+          <span>•</span>
+          <span>Framer Motion</span>
           <span>•</span>
           <span>Python</span>
           <span>•</span>
           <span>Web Design</span>
           <span>•</span>
-          <span>Front-End</span>
-          <span className="pr-6">•</span>
+          <span className="pr-[1.5vw]">Front-End</span>
         </p>
         <p ref={secondText}>
-          <span>React</span>
-          <span>•</span>
-          <span>Next.js</span>
           <span>•</span>
           <span>TypeScript</span>
           <span>•</span>
@@ -81,14 +101,19 @@ export default function Marquee() {
           <span>•</span>
           <span>PostgrSQL</span>
           <span>•</span>
+          <span>React</span>
+          <span>•</span>
+          <span>Next.js</span>
+          <span>•</span>
           <span>GSAP</span>
+          <span>•</span>
+          <span>Framer Motion</span>
           <span>•</span>
           <span>Python</span>
           <span>•</span>
           <span>Web Design</span>
           <span>•</span>
-          <span>Front-End</span>
-          <span className="pr-6">•</span>
+          <span className="pr-[1.5vw]">Front-End</span>
         </p>
       </div>
     </div>

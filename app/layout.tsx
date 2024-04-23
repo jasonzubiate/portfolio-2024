@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import LenisConext from "@/contexts/lenis-context";
-
-const inter = Inter({ subsets: ["latin"] });
+import Header from "@/components/ui/Header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,9 +15,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-cod-gray text-demo-smoke">
-      <body className={inter.className}>
-        <LenisConext >{children}</LenisConext>
+    <html lang="en" className="bg-cod-gray text-demo-smoke overflow-x-hidden">
+      <body className={GeistSans.className}>
+        <LenisConext>
+          <Header />
+          {children}
+        </LenisConext>
       </body>
     </html>
   );
